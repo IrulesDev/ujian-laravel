@@ -18,10 +18,10 @@ class Kepala_KeluargaFactory extends Factory
     public function definition(): array
     {
         return [
-            // 'nama' => fake()->name,
-            // 'keluarga_id' => keluarga::all()->random()->id,
-            // 'nik' =>fake()->unique()->numerify('##########'),
-            // 'tanggal_lahir' =>fake()->date,
+            'nama' => fake()->name,
+            'keluarga_id' => keluarga::all()->random()->id,
+            'nik' =>fake()->unique()->numerify('##########'),
+            'tanggal_lahir' =>fake()->date,
         ];
     }
 }

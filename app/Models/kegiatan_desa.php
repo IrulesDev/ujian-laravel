@@ -13,14 +13,15 @@ class kegiatan_desa extends Model
         'name',
         'tanggal_pelaksanaan',
         'deskripsi',
+        'tempat_id',
         'gambar'
     ];
 
-    public function penduduk1(){
-        return $this->hasOne(penduduk_kegiatan::class,'penduduk_kegiatan');
+    public function penduduk(){
+        return $this->belongsToMany(penduduk::class);
     }
     public function tempat(){
-        return $this->hasOne(fasilitas_desa::class, 'tempat_id');
+        return $this->hasMany(fasilitas_desa::class, 'tempat_id');
     }
     // public function penduduk(){
     //     return $this->belongsTo(penduduk::class);

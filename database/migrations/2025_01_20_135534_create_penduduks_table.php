@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('nama');
             $table->string('nik')->unique();
             $table->date('tanggal_lahir');
-            $table->enum('jenis_kelamin', ['L', 'P']);
+            $table->string('jenis_kelamin');
             $table->foreignId('keluarga_id')->references('id')->on('keluargas')->onDelete('cascade');
+            $table->foreignId('kegiatan_id')->references('id')->on('kegiatan_desas')->onDelete('cascade');
             $table->string('peran');
             $table->string('gambar')->nullable();
             $table->timestamps();

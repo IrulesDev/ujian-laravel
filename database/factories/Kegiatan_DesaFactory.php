@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\fasilitas_desa;
+use App\Models\kegiatan_desa;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

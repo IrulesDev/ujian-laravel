@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\kegiatan_desa;
 use App\Models\keluarga;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -25,7 +26,8 @@ class PendudukFactory extends Factory
             'nik' =>fake()->unique()->numerify('#############'),
             'tanggal_lahir' =>fake()->date(),
             'jenis_kelamin' =>fake()->randomElement($rolesJenisKelamin),
-            // 'keluarga_id' => keluarga::factory(),
+            'keluarga_id' => keluarga::all()->random()->id,
+            'kegiatan_id'=> kegiatan_desa::all()->random()->id,
             'peran' => fake()->randomElement($rolesPeran),
             'gambar' =>fake()->url(),
         ];

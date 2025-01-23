@@ -16,6 +16,6 @@ class fasilitas_desa extends Model
         'gambar',
     ] ;
     public function Kegitan_desa(){
-        return $this->belongsTo( kegiatan_desa::class,'tempat_id',);
+        return $this->belongsToMany( kegiatan_desa::class,'tempat_id',);
     }
 }

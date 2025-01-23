@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         
         // User::factory(11)->create();
         fasilitas_desa::factory(100)->create();
+        Kegiatan_Desa::factory(200)->create();
         
         $keluargas = Keluarga::factory(100)->create();
         foreach ($keluargas as $keluarga) {
@@ -29,13 +30,12 @@ class DatabaseSeeder extends Seeder
                 'keluarga_id' => $keluarga->id,
             ]);
             
-            // // Buat 1 kepala keluarga
-            // Kepala_Keluarga::factory()->create([
-            //     'keluarga_id' => $keluarga->id,
-            // ]);
+            // Buat 1 kepala keluarga
+            Kepala_Keluarga::factory()->create([
+                'keluarga_id' => $keluarga->id,
+            ]);
         }
-        Kegiatan_Desa::factory(200)->create();
-        penduduk_kegiatan::factory(200)->create();
+        // penduduk_kegiatan::factory(200)->create();
             
             
 
